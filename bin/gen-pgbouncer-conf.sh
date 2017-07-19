@@ -21,7 +21,6 @@ fi
 mkdir -p /app/vendor/stunnel/var/run/stunnel/
 cat >> /app/vendor/stunnel/stunnel-pgbouncer.conf << EOFEOF
 foreground = yes
-options = NO_TICKET
 options = NO_SSLv2
 options = SINGLE_ECDH_USE
 options = SINGLE_DH_USE
@@ -79,7 +78,6 @@ do
 
   cat >> /app/vendor/stunnel/stunnel-pgbouncer.conf << EOFEOF
 [$POSTGRES_URL]
-options = NO_TICKET
 protocol = pgsql
 accept  = /tmp/.s.PGSQL.610${n}
 connect = $DB_HOST:$DB_PORT
